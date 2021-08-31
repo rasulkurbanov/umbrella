@@ -1,0 +1,34 @@
+Используя django и django-rest framework сделать следующее:
+1 - Создать 4 таблицы в базе данных:
+ - Clients:
+client_id (Primary key)
+'passport_series'
+ 'firstname'
+ 'lastname'
+'phone'
+
+- Cars:
+car_id (Primary key)
+'brand'
+model
+
+- Orders:
+order_id (Primary key)
+client_id(Foreign key or OnoToOneField)
+car_id((Foreign key or OnoToOneField)
+timestamp(Datetime field)
+
+и таблица Users для хранения username, password and etc.
+Генерация токена для каждого узера и авторизация спомошью токена 
+
+2 - Создать API with request Methods: GET/POST/PUT/DELETE 
+
+- для юзеров 
+- для клиентов
+- для машин
+- для ордеров
+
+3 - Также создать апишки для получения следующей информации:
+
+Сколько ордеров за конкретный период
+Сколько раз определенная машина встречается в ордере
