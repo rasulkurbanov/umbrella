@@ -1,12 +1,16 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
-
+from .models import Project
 # Create your views here.
 
 
 def projects(request):
-    return render(request, 'projects/projects.html')
+    projects = Project.objects.all()
+    context = {'projects': projects}
+    return render(request, 'projects/projects.html', context)
 
 
 def project(request, pk):
-    return render(request, 'projects/single-project.html')
+    project = Project.objects.get(id=pk).tags.all()
+    context = {'project': project}
+    return render(request, 'projects/single-project.html', context)
